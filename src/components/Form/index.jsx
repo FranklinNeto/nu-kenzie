@@ -1,15 +1,23 @@
 import { useState } from "react";
 
-function Form({
-  listTransactions,
-  setListTransactions,
-  addToListTransactions,
-}) {
+function Form({ listTransactions, setListTransactions }) {
   const [inputDescription, setInputDescription] = useState("");
 
   const [inputValue, setInputValue] = useState("");
 
   const [selectTypeTransaction, setSelectTypeTransaction] = useState("Entrada");
+
+  function addToListTransactions() {
+    if (inputDescription !== "" && inputValue !== "") {
+      const objTransaction = {
+        description: inputDescription,
+        value: inputValue,
+        type: selectTypeTransaction,
+      };
+
+      setListTransactions([...listTransactions, objTransaction]);
+    }
+  }
 
   return (
     <form>
@@ -38,14 +46,7 @@ function Form({
         <option>Saída</option>
       </select>
       <button
-        onClick={(event) =>
-          addToListTransactions(
-            event.preventDefault(),
-            inputDescription,
-            inputValue,
-            selectTypeTransaction
-          )
-        }
+        onClick={(event) => addToListTransactions(event.preventDefault())}
       >
         Inserir Valor
       </button>

@@ -3,7 +3,7 @@ function Card({ transaction }) {
     <div>
       <div>
         <h2>{transaction.description}</h2>
-        <span>Entrada</span>
+        <span>{transaction.type}</span>
       </div>
       <div>
         <span>{transaction.value}</span>

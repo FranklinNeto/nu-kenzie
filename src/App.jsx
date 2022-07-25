@@ -2,12 +2,11 @@ import "./App.css";
 import { useState } from "react";
 import Form from "./components/Form";
 import List from "./components/List";
-import Card from "./components/Card";
 import TotalMoney from "./components/TotalMoney";
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
 
-  function addToListTransactions(
+  /* function addToListTransactions(
     preventDefault,
     newDescription,
     newValue,
@@ -22,11 +21,14 @@ function App() {
 
       setListTransactions([...listTransactions, objTransaction]);
     }
-  }
+  } */
   console.log(listTransactions);
   return (
     <>
-      <Form addToListTransactions={addToListTransactions}></Form>
+      <Form
+        listTransactions={listTransactions}
+        setListTransactions={setListTransactions}
+      ></Form>
       <List listTransactions={listTransactions}></List>
       <TotalMoney listTransactions={listTransactions}></TotalMoney>
     </>
