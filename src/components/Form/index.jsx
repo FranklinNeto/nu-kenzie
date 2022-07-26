@@ -32,7 +32,7 @@ function Form({ listTransactions, setListTransactions }) {
             setInputDescription(event.target.value);
           }}
         />
-        <span>Exemplo: Compra de Roupa</span>
+        <span>Ex: Compra de roupas</span>
 
         <div className="divInputSelect">
           {/* <p>Valor</p> */}

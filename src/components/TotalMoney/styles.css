@@ -1,0 +1,47 @@
+.totalMoney {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+
+  margin-left: 10rem;
+  margin-top: 2.5rem;
+
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+
+  padding: 1.25rem 1.5rem 1.125rem 1.5rem;
+}
+
+.totalMoney span {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: #343a40;
+}
+
+.divTotalValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divTotalValue h2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--grey-4);
+}
+
+.divTotalValue p {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  color: var(--color-primary);
+}

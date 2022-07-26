@@ -15,8 +15,8 @@ function App() {
         listTransactions={listTransactions}
         setListTransactions={setListTransactions}
       ></Form>
-      {/*  <TotalMoney listTransactions={listTransactions}></TotalMoney>
-      <List listTransactions={listTransactions}></List> */}
+      <TotalMoney listTransactions={listTransactions}></TotalMoney>
+      {/*       <List listTransactions={listTransactions}></List> */}
     </>
   );
 }

@@ -1,3 +1,5 @@
+import "./styles.css";
+
 function TotalMoney({ listTransactions }) {
   const totalValue = listTransactions.reduce((previousValue, currentValue) => {
     return previousValue + parseInt(currentValue.value);
@@ -10,7 +12,7 @@ function TotalMoney({ listTransactions }) {
         <p>${totalValue}</p>
       </div>
 
-      <span>Valor se refere ao saldo</span>
+      <span>O valor se refere ao saldo</span>
     </div>
   );
 }
