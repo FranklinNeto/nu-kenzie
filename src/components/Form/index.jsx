@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 function Form({ listTransactions, setListTransactions }) {
   const [inputDescription, setInputDescription] = useState("");
@@ -20,37 +21,59 @@ function Form({ listTransactions, setListTransactions }) {
   }
 
   return (
-    <form>
-      <input
-        name="descricao"
-        value={inputDescription}
-        onChange={(event) => {
-          setInputDescription(event.target.value);
-        }}
-      />
-      <input
-        name="valor"
-        type="number"
-        value={inputValue}
-        onChange={(event) => {
-          setInputValue(event.target.value);
-        }}
-      />
-      <select
-        value={selectTypeTransaction}
-        onChange={(event) => {
-          setSelectTypeTransaction(event.target.value);
-        }}
-      >
-        <option>Entrada</option>
-        <option>Saída</option>
-      </select>
-      <button
-        onClick={(event) => addToListTransactions(event.preventDefault())}
-      >
-        Inserir Valor
-      </button>
-    </form>
+    <div className="formMoney">
+      <form>
+        <label>Descrição</label>
+        <input
+          name="descricao"
+          value={inputDescription}
+          placeholder="Digite aqui sua descrição"
+          onChange={(event) => {
+            setInputDescription(event.target.value);
+          }}
+        />
+        <span>Exemplo: Compra de Roupa</span>
+
+        <div className="divInputSelect">
+          {/* <p>Valor</p> */}
+          <div className="divInputValor">
+            <label>Valor</label>
+            <div className="divInputValorNoLabel">
+              <input
+                name="valor"
+                type="number"
+                value={inputValue}
+                placeholder="1"
+                onChange={(event) => {
+                  setInputValue(event.target.value);
+                }}
+              />
+              <span>R$</span>
+            </div>
+          </div>
+          {/* <p>Tipo de Entrada</p> */}
+          <div className="divSelect">
+            <label>Tipo de Entrada</label>
+            <select
+              value={selectTypeTransaction}
+              onChange={(event) => {
+                setSelectTypeTransaction(event.target.value);
+              }}
+            >
+              <option>Entrada</option>
+              <option>Saída</option>
+            </select>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={(event) => addToListTransactions(event.preventDefault())}
+        >
+          Inserir Valor
+        </button>
+      </form>
+    </div>
   );
 }
 export default Form;
