@@ -1,5 +1,13 @@
 import "./styles.css";
-function Card({ transaction }) {
+function Card({ transaction, listTransactions, setListTransactions, index }) {
+  function handleCards(removeTransaction) {
+    setListTransactions(
+      listTransactions.filter((element, index) => {
+        return index !== removeTransaction;
+      })
+    );
+  }
+
   return (
     <div className="liCard">
       <div className="cardDescricao">
@@ -8,7 +16,7 @@ function Card({ transaction }) {
       </div>
       <div className="cardValor">
         <span>R$ {transaction.value}</span>
-        <button></button>
+        <button onClick={() => handleCards(index)}></button>
       </div>
     </div>
   );

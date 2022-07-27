@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 25vw;
 
-  margin-left: 10rem;
   margin-top: 2.5rem;
 
   background: #ffffff;
@@ -11,6 +10,7 @@
   border-radius: 4px;
 
   padding: 1.25rem 1.5rem 1.125rem 1.5rem;
+  background-color: yellow;
 }
 
 .totalMoney span {

@@ -1,6 +1,7 @@
 import Card from "../Card";
 import "./styles.css";
-function List({ listTransactions }) {
+
+function List({ listTransactions, setListTransactions }) {
   return (
     <ul className="list">
       <div className="listHeader">
@@ -12,7 +13,13 @@ function List({ listTransactions }) {
         </div>
       </div>
       {listTransactions.map((transaction, index) => (
-        <Card transaction={transaction} key={index} />
+        <Card
+          transaction={transaction}
+          index={index}
+          listTransactions={listTransactions}
+          setListTransactions={setListTransactions}
+          key={index}
+        />
       ))}
     </ul>
   );
