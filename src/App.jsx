@@ -10,14 +10,16 @@ function App() {
 
   console.log(listTransactions);
   return (
-    <>
-      <Form
-        listTransactions={listTransactions}
-        setListTransactions={setListTransactions}
-      ></Form>
-      <TotalMoney listTransactions={listTransactions}></TotalMoney>
-      {/*       <List listTransactions={listTransactions}></List> */}
-    </>
+    <div className="tudo">
+      <div>
+        <Form
+          listTransactions={listTransactions}
+          setListTransactions={setListTransactions}
+        ></Form>
+        <TotalMoney listTransactions={listTransactions}></TotalMoney>
+      </div>
+      <List listTransactions={listTransactions}></List>
+    </div>
   );
 }
 

@@ -2,9 +2,15 @@ import "./styles.css";
 
 function TotalMoney({ listTransactions }) {
   const totalValue = listTransactions.reduce((previousValue, currentValue) => {
-    return previousValue + parseInt(currentValue.value);
+    if (currentValue.type === "Entrada") {
+      const sum = previousValue + currentValue.value;
+      return parseFloat(sum.toFixed(2));
+    } else {
+      const subtraction = previousValue - currentValue.value;
+      return parseFloat(subtraction.toFixed(2));
+    }
   }, 0);
-  console.log(totalValue);
+
   return (
     <div className="totalMoney">
       <div className="divTotalValue">

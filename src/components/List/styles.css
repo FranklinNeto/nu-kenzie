@@ -1,0 +1,68 @@
+.list {
+  /*  background-color: red; */
+  margin-left: 5rem;
+  margin-top: 2.5rem;
+  width: 45vw;
+  height: 100vh;
+}
+
+.listHeader {
+  background-color: #fff;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.listHeader h3 {
+  font-family: var(--font--main);
+  font-style: bold;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--grey-4);
+}
+
+.listHeaderButtons {
+  display: flex;
+  justify-content: space-between;
+  /*  background-color: pink;*/
+  width: 50%;
+}
+
+.pinkButtonHeader,
+.greyButtonHeader {
+  background-color: var(--color-primary);
+  border: 0.125rem solid var(--color-primary);
+  border-radius: 0.5rem;
+  color: #ffffff;
+
+  font-family: var(--font--main);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.greyButtonHeader {
+  background-color: var(--grey-2);
+  border: 0.125rem solid var(--grey-2);
+  color: var(--grey-3);
+}
+
+.pinkButtonHeader:hover {
+  background-color: var(--color-primary-2);
+  color: var(--grey-1);
+  border: 0.125rem solid var(--color-primary-2);
+}
+
+.greyButtonHeader:hover {
+  background-color: var(--grey-3);
+  border: 0.125rem solid var(--grey-3);
+  color: var(--grey-1);
+}

@@ -12,7 +12,7 @@ function Form({ listTransactions, setListTransactions }) {
     if (inputDescription !== "" && inputValue !== "") {
       const objTransaction = {
         description: inputDescription,
-        value: inputValue,
+        value: parseFloat(inputValue),
         type: selectTypeTransaction,
       };
 
@@ -21,59 +21,56 @@ function Form({ listTransactions, setListTransactions }) {
   }
 
   return (
-    <div className="formMoney">
-      <form>
-        <label>Descrição</label>
-        <input
-          name="descricao"
-          value={inputDescription}
-          placeholder="Digite aqui sua descrição"
-          onChange={(event) => {
-            setInputDescription(event.target.value);
-          }}
-        />
-        <span>Ex: Compra de roupas</span>
+    <form>
+      <label>Descrição</label>
+      <input
+        name="descricao"
+        value={inputDescription}
+        placeholder="Digite aqui sua descrição"
+        onChange={(event) => {
+          setInputDescription(event.target.value);
+        }}
+      />
+      <span>Ex: Compra de roupas</span>
 
-        <div className="divInputSelect">
-          {/* <p>Valor</p> */}
-          <div className="divInputValor">
-            <label>Valor</label>
-            <div className="divInputValorNoLabel">
-              <input
-                name="valor"
-                type="number"
-                value={inputValue}
-                placeholder="1"
-                onChange={(event) => {
-                  setInputValue(event.target.value);
-                }}
-              />
-              <span>R$</span>
-            </div>
-          </div>
-          {/* <p>Tipo de Entrada</p> */}
-          <div className="divSelect">
-            <label>Tipo de Entrada</label>
-            <select
-              value={selectTypeTransaction}
+      <div className="divInputSelect">
+        <div className="divInputValor">
+          <label>Valor</label>
+          <div className="divInputValorNoLabel">
+            <input
+              name="valor"
+              type="number"
+              value={inputValue}
+              placeholder="1"
               onChange={(event) => {
-                setSelectTypeTransaction(event.target.value);
+                setInputValue(event.target.value);
               }}
-            >
-              <option>Entrada</option>
-              <option>Saída</option>
-            </select>
+            />
+            <span>R$</span>
           </div>
         </div>
+        {/* <p>Tipo de Entrada</p> */}
+        <div className="divSelect">
+          <label>Tipo de Entrada</label>
+          <select
+            value={selectTypeTransaction}
+            onChange={(event) => {
+              setSelectTypeTransaction(event.target.value);
+            }}
+          >
+            <option>Entrada</option>
+            <option>Despesa</option>
+          </select>
+        </div>
+      </div>
 
-        <button
-          type="button"
-          onClick={(event) => addToListTransactions(event.preventDefault())}
-        >
-          Inserir Valor
-        </button>
-      </form>
-    </div>
+      <button
+        type="button"
+        onClick={(event) => addToListTransactions(event.preventDefault())}
+      >
+        Inserir Valor
+      </button>
+    </form>
   );
 }
 export default Form;
