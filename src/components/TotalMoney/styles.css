@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 25vw;
 
+  max-width: 360px;
+  min-width: 300px;
   margin-top: 2.5rem;
 
   background: #ffffff;

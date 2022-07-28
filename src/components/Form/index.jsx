@@ -49,7 +49,6 @@ function Form({ listTransactions, setListTransactions }) {
             <span>R$</span>
           </div>
         </div>
-        {/* <p>Tipo de Entrada</p> */}
         <div className="divSelect">
           <label>Tipo de Entrada</label>
           <select

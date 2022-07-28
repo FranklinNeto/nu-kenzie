@@ -10,7 +10,6 @@ import "./reset.css";
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
 
-  console.log(listTransactions);
   return (
     <div className="tudo">
       <Header></Header>
