@@ -1,4 +1,5 @@
 import "./styles.css";
+import logo from "../../assets/trash.png";
 function Card({ transaction, listTransactions, setListTransactions, index }) {
   function handleCards(removeTransaction) {
     setListTransactions(
@@ -16,7 +17,9 @@ function Card({ transaction, listTransactions, setListTransactions, index }) {
       </div>
       <div className="cardValor">
         <span>R$ {transaction.value}</span>
-        <button onClick={() => handleCards(index)}></button>
+        <button onClick={() => handleCards(index)}>
+          <img alt="" src={logo} />
+        </button>
       </div>
     </div>
   );
