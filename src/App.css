@@ -31,7 +31,7 @@ body {
 .main {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   /*  background-color: aquamarine; */
   width: 100vw;
 }
@@ -67,5 +67,21 @@ body {
     min-width: none;
     max-width: 510px;
     width: 80vw;
+  }
+
+  .listHeaderButtons {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+
+  .pinkButtonHeader,
+  .greyButtonHeader {
+    height: 100%;
+    margin: 0.5rem;
+  }
+
+  .listHeader {
+    flex-direction: column;
   }
 }

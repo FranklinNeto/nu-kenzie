@@ -3,7 +3,7 @@
   margin-left: 5rem;
   margin-top: 2.5rem;
   width: 40vw;
-  min-width: 341px;
+  min-width: 300px;
   height: 100vh;
   overflow: auto;
 }
@@ -32,9 +32,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: pink; */
+  /*  background-color: pink; */
   width: 60%;
-  height: inherit;
+  height: 5rem;
 }
 
 .pinkButtonHeader,
@@ -53,7 +53,8 @@
   cursor: pointer;
 
   height: 50%;
-  width: 90px;
+  width: 80px;
+  margin: 0.25rem;
 }
 
 .greyButtonHeader {
