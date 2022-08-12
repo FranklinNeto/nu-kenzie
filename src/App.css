@@ -31,9 +31,10 @@ body {
 .main {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  /*  background-color: aquamarine; */
+  align-items: center;
+  /* background-color: aquamarine; */
   width: 100vw;
+  margin-top: 5rem;
 }
 .formAndTotalMoney {
   display: flex;

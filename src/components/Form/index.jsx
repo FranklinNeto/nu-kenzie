@@ -14,6 +14,7 @@ function Form({ listTransactions, setListTransactions }) {
         description: inputDescription,
         value: parseFloat(inputValue),
         type: selectTypeTransaction,
+        id: Math.random(),
       };
 
       setListTransactions([...listTransactions, objTransaction]);

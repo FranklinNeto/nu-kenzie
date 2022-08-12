@@ -1,27 +1,40 @@
-import "./styles.css";
+import { CardContainer } from "./styles";
 import logo from "../../assets/trash.png";
-function Card({ transaction, listTransactions, setListTransactions, index }) {
+
+function Card({
+  transaction,
+  listTransactions,
+  setListTransactions,
+  filteredCards,
+  setFilteredCards,
+}) {
   function handleCards(removeTransaction) {
     setListTransactions(
-      listTransactions.filter((element, index) => {
-        return index !== removeTransaction;
+      listTransactions.filter((element) => {
+        return element.id !== removeTransaction;
+      })
+    );
+
+    setFilteredCards(
+      filteredCards.filter((element) => {
+        return element.id !== removeTransaction;
       })
     );
   }
 
   return (
-    <div className="liCard">
+    <CardContainer className="liCard" transaction={transaction.type}>
       <div className="cardDescricao">
         <h2>{transaction.description}</h2>
         <span>{transaction.type}</span>
       </div>
       <div className="cardValor">
-        <span>R$ {transaction.value}</span>
-        <button onClick={() => handleCards(index)}>
+        <span>R$ {transaction.value.toFixed(2)}</span>
+        <button onClick={() => handleCards(transaction.id)}>
           <img alt="" src={logo} />
         </button>
       </div>
-    </div>
+    </CardContainer>
   );
 }
 export default Card;

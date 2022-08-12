@@ -9,6 +9,7 @@ import "./reset.css";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
 
   return (
     <div className="tudo">
@@ -19,11 +20,16 @@ function App() {
             listTransactions={listTransactions}
             setListTransactions={setListTransactions}
           ></Form>
-          <TotalMoney listTransactions={listTransactions}></TotalMoney>
+          <TotalMoney
+            listTransactions={listTransactions}
+            filteredCards={filteredCards}
+          ></TotalMoney>
         </section>
         <List
           listTransactions={listTransactions}
           setListTransactions={setListTransactions}
+          filteredCards={filteredCards}
+          setFilteredCards={setFilteredCards}
         ></List>
       </main>
     </div>
