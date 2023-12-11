@@ -1,5 +1,6 @@
 import { CardContainer } from "./styles";
 import logo from "../../assets/trash.png";
+import {motion} from "framer-motion"
 
 function Card({
   transaction,
@@ -23,6 +24,12 @@ function Card({
   }
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2 }}
+  >
     <CardContainer className="liCard" transaction={transaction.type}>
       <div className="cardDescricao">
         <h2>{transaction.description}</h2>
@@ -35,6 +42,7 @@ function Card({
         </button>
       </div>
     </CardContainer>
+    </motion.div>
   );
 }
 export default Card;
