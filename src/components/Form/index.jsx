@@ -1,36 +1,47 @@
 import { useState } from "react";
 import "./styles.css";
 
+import { v4 as uuidv4 } from "uuid";
+
 function Form({ listTransactions, setListTransactions }) {
-  const [inputDescription, setInputDescription] = useState("");
+  
+  const [form, setForm] = useState({
+    description: "",
+    value: "",
+    type: "Entrada",
+  });
 
-  const [inputValue, setInputValue] = useState("");
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const [selectTypeTransaction, setSelectTypeTransaction] = useState("Entrada");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  function addToListTransactions() {
-    if (inputDescription !== "" && inputValue !== "") {
+    if (form.description !== "" && form.value !== "") {
       const objTransaction = {
-        description: inputDescription,
-        value: parseFloat(inputValue),
-        type: selectTypeTransaction,
-        id: Math.random(),
+        description: form.description,
+        value: parseFloat(form.value),
+        type: form.type,
+        id: uuidv4(),
       };
 
       setListTransactions([...listTransactions, objTransaction]);
     }
-  }
+  };
+
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Descrição</label>
       <input
-        name="descricao"
-        value={inputDescription}
+        type="text"
+        name="description"
         placeholder="Digite aqui sua descrição"
-        onChange={(event) => {
-          setInputDescription(event.target.value);
-        }}
+        onChange={handleChange}
       />
       <span>Ex: Compra de roupas</span>
 
@@ -39,37 +50,24 @@ function Form({ listTransactions, setListTransactions }) {
           <label>Valor</label>
           <div className="divInputValorNoLabel">
             <input
-              name="valor"
+              name="value"
               type="number"
-              value={inputValue}
-              placeholder="1"
-              onChange={(event) => {
-                setInputValue(event.target.value);
-              }}
+              placeholder="0"
+              onChange={handleChange}
             />
             <span>R$</span>
           </div>
         </div>
         <div className="divSelect">
           <label>Tipo de Entrada</label>
-          <select
-            value={selectTypeTransaction}
-            onChange={(event) => {
-              setSelectTypeTransaction(event.target.value);
-            }}
-          >
+          <select name="type" onChange={handleChange}>
             <option>Entrada</option>
             <option>Despesa</option>
           </select>
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={(event) => addToListTransactions(event.preventDefault())}
-      >
-        Inserir Valor
-      </button>
+      <button type="submit">Inserir Valor</button>
     </form>
   );
 }
